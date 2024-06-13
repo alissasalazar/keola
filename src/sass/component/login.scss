@@ -1,0 +1,30 @@
+.loginComponent {
+  .containerLogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+.containerForm{
+  background: #FFB655;
+}
+  .containerForm, .contentButton,.titleLogin{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .titleLogin {
+    font-weight: bold;
+    margin-bottom: 2em;
+
+  }
+  .contentButton{
+    margin: 4em;
+  }
+
+  .error{
+    color: red;
+    margin-top: 0.5em;
+  }
+}

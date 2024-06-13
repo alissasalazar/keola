@@ -1,0 +1,40 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">SUSCRIPCIÓN</th>
+      <th scope="col">VER CRONOGRAMA</th>
+      <th scope="col">ACCIÓN</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of subscription; let i = index">
+      <th scope="row">{{ i + 1 }}</th>
+      <!-- <td>{{subscription.package.description}}</td> -->
+      <td>{{ item.package.name }}</td>
+      <button class="btn btn-info" (click)="toggleRowCronograma(item, i)">
+        Ver
+      </button>
+    </tr>
+    <tr *ngIf="expandedRowIndex == i">
+      <td colspan="4">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Detalle del Cronograma</th>
+              <th>Pago</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let cronogram of cronograms.objModel; let j = index">
+              <th scope="row">{{ j + 1 }}</th>
+              <td>{{ cronogram.quoteDescription }}</td>
+              <td>S/. {{ cronogram.amortization }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  </tbody>
+</table>
